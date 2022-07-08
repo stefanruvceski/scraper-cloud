@@ -28,6 +28,7 @@ app.use(createScraperRouter);
 app.use(showScraperRouter);
 
 app.all("*", async (req, res) => {
+  res.send("<h1>Scraper Cloud</h1>");
   throw new NotFoundError();
 });
 
