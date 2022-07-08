@@ -1,7 +1,6 @@
 name: deploy-manifests
-
-
 on:
+  workflow_dispatch:
   push:
     branches: 
       - master
