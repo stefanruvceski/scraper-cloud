@@ -19,7 +19,7 @@ const start = async () => {
     throw new Error("JWT_KEY must be defined");
   }
   if (!process.env.NATS_URL) {
-    throw new Error("JWT_KEY must be defined.");
+    throw new Error("JWT_KEY must be defined");
   }
 
   try {
