@@ -1,4 +1,4 @@
-name: deploy-scraper
+name: deploy-scrapers
 
 on:
   workflow_dispatch:
@@ -6,21 +6,21 @@ on:
     branches:
       - master
     paths:
-      - 'scraper/**'
+      - 'scrapers/**'
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: cd scraper && docker build -t stefanruvceski/scraper .
+      - run: cd scrapers && docker build -t stefanruvceski/scrapers .
       - run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-      - run: docker push stefanruvceski/scraper
+      - run: docker push stefanruvceski/scrapers
       - uses: digitalocean/action-doctl@v2
         with:
           token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
-      - run: doctl kubernetes cluster kubeconfig save scraper-cloud
-      - run: kubectl rollout restart deployment scraper-depl
+      - run: doctl kubernetes cluster kubeconfig save scrapers-cloud
+      - run: kubectl rollout restart deployment scrapers-depl
