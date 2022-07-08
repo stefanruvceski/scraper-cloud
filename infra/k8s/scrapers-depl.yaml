@@ -30,8 +30,7 @@ spec:
             - name: NATS_URL
               value: 'http://nats-srv:4222'
             - name: NATS_CLUSTER_ID
-              value: scraping 
-              
+              value: scraping     
 ---
 apiVersion: v1
 kind: Service
