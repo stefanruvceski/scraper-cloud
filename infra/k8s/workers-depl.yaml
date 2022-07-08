@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: workers-depl
+spec:
+  # TODO how to autoscale worker instances
+  replicas: 3
+  selector:
+    matchLabels:
+      app: workers
+  template:
+    metadata:
+      labels:
+        app: workers
+    spec:
+      containers:
+        - name: workers
+          image: stefanruvceski/workers
+          env:
+            - name: NATS_CLIENT_ID
+              valueFrom:
+                fieldRef:
+                    fieldPath: metadata.name
+            - name: NATS_URL
+              value: 'http://nats-srv:4222'
+            - name: NATS_CLUSTER_ID
+              value: scraping 
+            - name: REDIS_HOST
+              value: workers-redis-srv
+

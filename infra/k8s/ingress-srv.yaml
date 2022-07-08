@@ -1,0 +1,33 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-service
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/use-regex: "true"
+spec:
+  rules:
+    - host: mitsho-scraper.dev
+      http:
+        paths:
+          - path: /api/users/?(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: auth-srv
+                port: 
+                  number: 3000
+          - path: /api/scrapers/?(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: scrapers-srv
+                port: 
+                  number: 3000
+          - path: /api/scraping/?(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: scraping-srv
+                port: 
+                  number: 3000
