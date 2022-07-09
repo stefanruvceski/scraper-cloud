@@ -16,10 +16,12 @@ const schedulerQueue = new Queue<Payload>("scraping:start", {
 });
 
 schedulerQueue.process(async (job) => {
+  const bla = job.id;
   new ScrapingStartPublisher(natsWrapper.client).publish({
     scrapingId: job.data.scrapingId,
     url: job.data.url,
     content: job.data.content,
+    jobId: job.id,
   });
 });
 

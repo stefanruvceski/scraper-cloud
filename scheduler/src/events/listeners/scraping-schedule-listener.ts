@@ -15,7 +15,7 @@ export class ScrapingScheduleListener extends Listener<ScrapingScheduleEvent> {
 
   async onMessage(data: ScrapingScheduleEvent["data"], msg: Message) {
     console.log("Scheduling for every " + data.scheduleFor + " minutes!");
-    await schedulerQueue.add(
+    const job = await schedulerQueue.add(
       {
         scrapingId: data.scrapingId,
         url: data.url,
