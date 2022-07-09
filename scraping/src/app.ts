@@ -28,6 +28,7 @@ app.use(showScrapingDataRouter);
 // TODO Route for killing scheduled scraping
 
 app.all("*", async (req, res) => {
+  res.send("<h1>Scraper Cloud</h1>");
   throw new NotFoundError();
 });
 
