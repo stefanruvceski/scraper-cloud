@@ -29,8 +29,10 @@ app.use(showScrapingDataRouter);
 // TODO Route for killing scheduled scraping
 
 app.all("*", async (req, res) => {
-  res.sendFile(path.join(__dirname, "/pages/home.html"));
-  throw new NotFoundError();
+  // console.log("/pages/home.html", { root: __dirname });
+  // res.send("test");
+  res.sendFile("pages/home.html", { root: __dirname });
+  // throw new NotFoundError();
 });
 
 app.use(errorHandler);
