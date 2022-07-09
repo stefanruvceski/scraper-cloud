@@ -10,6 +10,7 @@ import {
 import { startScrapingRouter } from "./routes/start-scraping";
 import { scheduleScrapingRouter } from "./routes/schedule-scraping";
 import { showScrapingDataRouter } from "./routes/show-scraping-data";
+import path from "path";
 
 const app = express();
 
@@ -28,7 +29,7 @@ app.use(showScrapingDataRouter);
 // TODO Route for killing scheduled scraping
 
 app.all("*", async (req, res) => {
-  res.send("<h1>Scraper Cloud</h1>");
+  res.sendFile(path.join(__dirname, "/pages/home.html"));
   throw new NotFoundError();
 });
 
