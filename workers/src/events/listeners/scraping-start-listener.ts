@@ -1,6 +1,6 @@
 import {
   Listener,
-  ScrapedDataStatus,
+  ScrapingStatus,
   ScrapingData,
   ScrapingStartEvent,
   Subjects,
@@ -20,11 +20,11 @@ export class ScrapingStartListener extends Listener<ScrapingStartEvent> {
 
     const { data: htmlData } = await axios.get(data.url);
     const $ = load(htmlData);
-    let status = ScrapedDataStatus.Success;
+    let status = ScrapingStatus.Success;
     const content = data.content.map((obj: ScrapingData) => {
       const value =
         $(obj.selector)?.text() || "error caused by " + obj.selector;
-      if (value.includes("error")) status = ScrapedDataStatus.Fail;
+      if (value.includes("error")) status = ScrapingStatus.Fail;
       return {
         ...obj,
         value,

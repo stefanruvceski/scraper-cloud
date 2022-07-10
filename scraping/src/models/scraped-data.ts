@@ -1,16 +1,16 @@
 import mongoose from "mongoose";
 import { ScraperDoc } from "./scraper";
-import { ScrapedDataStatus, ScrapingData } from "@mistho-scraper/common";
+import { ScrapingStatus, ScrapingData } from "@mistho-scraper/common";
 interface ScrapedDataAttrs {
   scraper: ScraperDoc;
-  status: ScrapedDataStatus;
+  status: ScrapingStatus;
   scrapedAt?: Date;
   content?: ScrapingData[];
 }
 
 interface ScrapedDataDoc extends mongoose.Document {
   scraper: ScraperDoc;
-  status: ScrapedDataStatus;
+  status: ScrapingStatus;
   scrapedAt?: Date;
   content?: ScrapingData[];
 }
@@ -28,8 +28,8 @@ const scrapedDataSchema = new mongoose.Schema(
     status: {
       type: String,
       require: true,
-      enum: Object.values(ScrapedDataStatus),
-      default: ScrapedDataStatus.Pending,
+      enum: Object.values(ScrapingStatus),
+      default: ScrapingStatus.Pending,
     },
     scrapedAt: {
       type: mongoose.Schema.Types.Date,
