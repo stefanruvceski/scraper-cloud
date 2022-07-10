@@ -14,7 +14,7 @@ router.delete(
   "/api/scrapers/:id",
   requireAuth,
   async (req: Request, res: Response) => {
-    const scraper = await Scraper.findById(req.params.id);
+    const scraper = await Scraper.remove(req.params.id);
 
     if (!scraper) {
       throw new NotFoundError();
@@ -23,9 +23,6 @@ router.delete(
     if (scraper.userId !== req.currentUser!.id) {
       throw new NotAuthorizedError();
     }
-
-    scraper.remove();
-    await scraper.save();
 
     res.send(scraper);
   }
