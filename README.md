@@ -192,7 +192,8 @@ Currently usage of Scraper Cloud 🚀 is only available through our API (you can
 In root of the repository use command `skaffold dev`
 
 ## Architecture
-![Untitled Diagram-3](https://user-images.githubusercontent.com/36955966/178142394-b5686e94-7956-406a-aede-3ad90c79fa67.jpg)
+![arch](https://user-images.githubusercontent.com/36955966/178144278-ed2f96c0-fcf5-4ca4-9bd8-4f643f73b900.jpg)
+
 
 ### Micro Services
 Every service is instance of docker image deployed into kubernetes cluster on Digital Ocean platform.
