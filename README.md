@@ -4,8 +4,10 @@ Get quality data from any public website with Data Collector, the world's #1 web
 
 public url for demo - https://www.scrapercloud.com/api/
 
+## Lending Page https://www.scrapercloud.com/api/scraping/ (WIP)
+![image](https://user-images.githubusercontent.com/36955966/178142477-706f41ef-21c6-4a75-ab19-fd11cd3ee672.png)
+
 [Technologies](#Technologies)
-[Lending Page (WIP)](#Lending-Page-(WIP))
 [Architecture](#Architecture)
 
 ## Technologies
@@ -87,8 +89,7 @@ public url for demo - https://www.scrapercloud.com/api/
     }
 ```
 
-## Lending Page (WIP)
-![image](https://user-images.githubusercontent.com/36955966/178142477-706f41ef-21c6-4a75-ab19-fd11cd3ee672.png)
+
 
 
 ## Architecture
