@@ -1,4 +1,5 @@
-import { ScrapingScheduleListener } from "./events/listeners/scraping-schedule-listener";
+import { ScrapingCronScheduleListener } from "./events/listeners/scraping-cron-schedule-listener";
+import { ScrapingEveryScheduleListener } from "./events/listeners/scraping-every-schedule-listener";
 import { natsWrapper } from "./nats-wrapper";
 
 const start = async () => {
@@ -26,7 +27,8 @@ const start = async () => {
     process.on("SIGINT", () => natsWrapper.client.close());
     process.on("SIGTERM", () => natsWrapper.client.close());
 
-    new ScrapingScheduleListener(natsWrapper.client).listen();
+    new ScrapingEveryScheduleListener(natsWrapper.client).listen();
+    new ScrapingCronScheduleListener(natsWrapper.client).listen();
   } catch (err) {
     console.error(err);
   }

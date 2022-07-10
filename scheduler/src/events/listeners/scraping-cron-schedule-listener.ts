@@ -1,20 +1,19 @@
 import {
   Listener,
-  ScrapingScheduleEvent,
+  ScrapingCronScheduleEvent,
   Subjects,
 } from "@mistho-scraper/common";
 import { Message } from "node-nats-streaming";
 import { schedulerQueue } from "../../queues/scheduler-queue";
 import { queueGroupName } from "./queue-group-name";
 
-const DEFAULT_REPEAT_IN_MINUTES = 5;
-
-export class ScrapingScheduleListener extends Listener<ScrapingScheduleEvent> {
-  readonly subject: Subjects.ScrapingSchedule = Subjects.ScrapingSchedule;
+export class ScrapingCronScheduleListener extends Listener<ScrapingCronScheduleEvent> {
+  readonly subject: Subjects.ScrapingCronSchedule =
+    Subjects.ScrapingCronSchedule;
   queueGroupName = queueGroupName;
 
-  async onMessage(data: ScrapingScheduleEvent["data"], msg: Message) {
-    console.log("Scheduling for every " + data.scheduleFor + " minutes!");
+  async onMessage(data: ScrapingCronScheduleEvent["data"], msg: Message) {
+    console.log("Scheduling scraping cron " + data.scheduleFor + " !");
     await schedulerQueue.add(
       {
         scrapingId: data.scrapingId,
@@ -23,10 +22,7 @@ export class ScrapingScheduleListener extends Listener<ScrapingScheduleEvent> {
       },
       {
         repeat: {
-          every:
-            (Number.parseInt(data.scheduleFor) || DEFAULT_REPEAT_IN_MINUTES) *
-            60 *
-            1000,
+          cron: data.scheduleFor,
         },
         jobId: data.scrapingId,
       }
