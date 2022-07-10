@@ -5,7 +5,7 @@ Get quality data from any public website with Data Collector, the world's #1 web
 public url for demo - https://www.scrapercloud.com/api/
 
 [Technologies](#Technologies)
-[Lending Page (WIP)](#Lending Page (WIP))
+[Lending Page (WIP)](#Lending)
 [Architecture](#Architecture)
 
 ## Technologies
