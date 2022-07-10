@@ -11,6 +11,7 @@ import { createScraperRouter } from "./routes/create-scraper";
 import { showScraperRouter } from "./routes/show-scraper";
 import { showScrapersRouter } from "./routes/show-scrapers";
 import { updateScraperRouter } from "./routes/update-scraper";
+import { deleteScraperRouter } from "./routes/delete-scraper";
 
 const app = express();
 app.set("trust proxy", true);
@@ -26,6 +27,7 @@ app.use(updateScraperRouter);
 app.use(showScrapersRouter);
 app.use(createScraperRouter);
 app.use(showScraperRouter);
+app.use(deleteScraperRouter);
 
 app.all("*", async (req, res) => {
   res.send("<h1>Scraper Cloud</h1>");
