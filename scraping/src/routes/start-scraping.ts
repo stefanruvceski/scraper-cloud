@@ -1,7 +1,7 @@
 import {
   NotFoundError,
   requireAuth,
-  ScrapedDataStatus,
+  ScrapingStatus,
 } from "@mistho-scraper/common";
 import express, { Request, Response } from "express";
 import { ScrapingStartedPublisher } from "../events/publishers/scraping-started-publisher";
@@ -21,7 +21,7 @@ router.post(
     }
     const scrapedData = ScrapedData.build({
       scraper,
-      status: ScrapedDataStatus.Pending,
+      status: ScrapingStatus.Pending,
     });
     await scrapedData.save();
 

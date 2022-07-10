@@ -1,7 +1,6 @@
 import {
-  BadRequestError,
   Listener,
-  ScrapedDataStatus,
+  ScrapingStatus,
   ScrapingFinishedEvent,
   Subjects,
 } from "@mistho-scraper/common";
@@ -16,10 +15,10 @@ export class ScrapingFinishedListener extends Listener<ScrapingFinishedEvent> {
   async onMessage(data: ScrapingFinishedEvent["data"], msg: Message) {
     const scrapingData = await ScrapedData.findById(data.scrapingId);
     const status = data.content.some(
-      (data) => data.status === ScrapedDataStatus.Fail
+      (data) => data.status === ScrapingStatus.Fail
     )
-      ? ScrapedDataStatus.Fail
-      : ScrapedDataStatus.Success;
+      ? ScrapingStatus.Fail
+      : ScrapingStatus.Success;
 
     if (!!scrapingData) {
       scrapingData.set({

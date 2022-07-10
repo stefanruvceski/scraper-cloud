@@ -18,7 +18,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@mistho-scraper/common": "^1.0.41",
+    "@mistho-scraper/common": "^1.0.46",
     "@types/bull": "^3.15.8",
     "axios": "^0.27.2",
     "bull": "^4.8.4",

@@ -1,7 +1,7 @@
 import {
   NotFoundError,
   requireAuth,
-  ScrapedDataStatus,
+  ScrapingStatus,
   validateRequest,
 } from "@mistho-scraper/common";
 import express, { Request, Response } from "express";
@@ -32,7 +32,7 @@ router.post(
     }
     const scrapedData = ScrapedData.build({
       scraper,
-      status: ScrapedDataStatus.Pending,
+      status: ScrapingStatus.Pending,
     });
     await scrapedData.save();
 
