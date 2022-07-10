@@ -1,3 +1,4 @@
 # Scraper Cloud 🚀
 
-![architecrure](https://user-images.githubusercontent.com/36955966/178142193-4402326c-43db-4b03-a912-443a8b6b3799.png)
+
+![Untitled Diagram](https://user-images.githubusercontent.com/36955966/178142363-51ea55ba-50a6-4f01-8b1f-b92d546d7f8b.jpg)
