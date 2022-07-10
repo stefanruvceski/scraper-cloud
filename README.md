@@ -6,6 +6,7 @@ public url for demo - https://www.scrapercloud.com/api/
 
 - [Technologies](#Technologies)
 - [Usage](#Usage)
+- [Local Setup](#local-setup)
 - [Architecture](#Architecture)
 
 ## Lending Page (WIP) https://www.scrapercloud.com/api/scraping/ 
@@ -184,7 +185,11 @@ Currently usage of Scraper Cloud 🚀 is only available through our API (you can
 ```
 
 
-
+## Local Setup
+### Prerequisites
+- docker desktop and kubernetes (mac/windows)
+- docker and minikube (linux)
+In root of the repository use command `skaffold dev`
 
 ## Architecture
 ![Untitled Diagram-3](https://user-images.githubusercontent.com/36955966/178142394-b5686e94-7956-406a-aede-3ad90c79fa67.jpg)
