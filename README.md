@@ -189,6 +189,7 @@ Currently usage of Scraper Cloud 🚀 is only available through our API (you can
 ### Prerequisites
 - docker desktop and kubernetes (mac/windows)
 - docker and minikube (linux)
+- Skaffold
 In root of the repository use command `skaffold dev`
 
 ## Architecture
