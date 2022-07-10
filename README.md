@@ -4,12 +4,12 @@ Get quality data from any public website with Data Collector, the world's #1 web
 
 public url for demo - https://www.scrapercloud.com/api/
 
-## Lending Page https://www.scrapercloud.com/api/scraping/ (WIP)
-![image](https://user-images.githubusercontent.com/36955966/178142477-706f41ef-21c6-4a75-ab19-fd11cd3ee672.png)
-
 - [Technologies](#Technologies)
 - [Usage](#Usage)
 - [Architecture](#Architecture)
+
+## Lending Page (WIP) https://www.scrapercloud.com/api/scraping/ 
+![image](https://user-images.githubusercontent.com/36955966/178142477-706f41ef-21c6-4a75-ab19-fd11cd3ee672.png)
 
 ## Technologies
 - NodeJS
@@ -17,6 +17,7 @@ public url for demo - https://www.scrapercloud.com/api/
 - TypeScript
 
 ## Usage
+Currently usage of Scraper Cloud 🚀 is only available through our API (you can use Postman for trying it out)
 ### API routes
 #### auth 
 - POST /api/users/signup
