@@ -24,10 +24,12 @@ router.delete(
       throw new NotAuthorizedError();
     }
 
-    scraper.remove();
-    await scraper.save();
-
-    res.send(scraper);
+    try {
+      scraper.remove();
+      res.send(scraper);
+    } catch (err) {
+      res.send(err);
+    }
   }
 );
 
