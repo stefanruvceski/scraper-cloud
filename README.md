@@ -195,7 +195,8 @@ In root of the repository use command `skaffold dev`
 ![Untitled Diagram-3](https://user-images.githubusercontent.com/36955966/178142394-b5686e94-7956-406a-aede-3ad90c79fa67.jpg)
 
 ### Micro Services
-Every service is instance of docker image deployed into kubernetes cluster on Digital Ocean platform
+Every service is instance of docker image deployed into kubernetes cluster on Digital Ocean platform.
+CI/CD is implemented through GitHub action workflows. On PR merge into `master` branch, when there are changes in some of the services, associated action is triggered for building and deploying it to Digital Ocean cluster.
 - auth service for handling signup/signin/signout and currentUser routes
 - scrapers service for handling CRUD operations on scraper model
 - scraping sercice for handling start and schedule scraping
