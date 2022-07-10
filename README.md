@@ -193,3 +193,12 @@ In root of the repository use command `skaffold dev`
 
 ## Architecture
 ![Untitled Diagram-3](https://user-images.githubusercontent.com/36955966/178142394-b5686e94-7956-406a-aede-3ad90c79fa67.jpg)
+
+### Micro Services
+Every service is instance of docker image deployed into kubernetes cluster on Digital Ocean platform
+- auth service for handling signup/signin/signout and currentUser routes
+- scrapers service for handling CRUD operations on scraper model
+- scraping sercice for handling start and schedule scraping
+- scheduler service for handling cron jobs for triggering scraping on given time schedule
+- workers service for handling scraping work 
+- NATS streaming service for handling async event based communication between all services
