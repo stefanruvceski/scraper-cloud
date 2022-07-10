@@ -2,14 +2,11 @@ import express from "express";
 import "express-async-errors";
 import { json } from "body-parser";
 import cookieSession from "cookie-session";
-import {
-  currentUser,
-  errorHandler,
-  NotFoundError,
-} from "@mistho-scraper/common";
+import { currentUser, errorHandler } from "@mistho-scraper/common";
 import { startScrapingRouter } from "./routes/start-scraping";
-import { scheduleScrapingRouter } from "./routes/schedule-scraping";
+import { scheduleEveryScrapingRouter } from "./routes/schedule-every-scraping";
 import { showScrapingDataRouter } from "./routes/show-scraping-data";
+import { scheduleCronScrapingRouter } from "./routes/schedule-cron-scraping";
 
 const app = express();
 
@@ -23,7 +20,8 @@ app.use(
 );
 app.use(currentUser);
 app.use(startScrapingRouter);
-app.use(scheduleScrapingRouter);
+app.use(scheduleEveryScrapingRouter);
+app.use(scheduleCronScrapingRouter);
 app.use(showScrapingDataRouter);
 
 app.all("*", async (req, res) => {
