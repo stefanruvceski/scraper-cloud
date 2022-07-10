@@ -7,8 +7,9 @@ public url for demo - https://www.scrapercloud.com/api/
 ## Lending Page https://www.scrapercloud.com/api/scraping/ (WIP)
 ![image](https://user-images.githubusercontent.com/36955966/178142477-706f41ef-21c6-4a75-ab19-fd11cd3ee672.png)
 
-[Technologies](#Technologies)
-[Architecture](#Architecture)
+- [Technologies](#Technologies)
+- [Usage](#Usage)
+- [Architecture](#Architecture)
 
 ## Technologies
 - NodeJS
