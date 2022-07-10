@@ -19,6 +19,7 @@ public url for demo - https://www.scrapercloud.com/api/
 
 ## Usage
 Currently usage of Scraper Cloud 🚀 is only available through our API (you can use Postman for trying it out)
+
 Postman collection for easier usage - [Scraper Cloud requests.postman_collection.json.zip](https://github.com/stefanruvceski/mitsho-scraper/files/9079129/Scraper.Cloud.requests.postman_collection.json.zip)
 
 ### API routes
