@@ -36,10 +36,76 @@ Currently usage of Scraper Cloud 🚀 is only available through our API (you can
 ```
 - POST /api/users/signout
 - GET /api/users/currentUser
+```js
+    const response = {
+        "currentUser": {
+            "id": "62c8c26ca79a8b00195b2654",
+            "email": "test@test.com",
+            "iat": 1657449899
+        }
+    }
+```
 
 #### scraper models
 - GET /api/scrapers/
+```js
+    const response = {
+        {
+            "content": [
+                {
+                    "name": "Header",
+                    "selector": ".header"
+                },
+                {
+                    "name": "Subheader",
+                    "selector": ".byline"
+                }
+            ],
+            "title": "IMDB test",
+            "url": "https://www.imdb.com/chart/top/?ref_=nv_mv_250",
+            "userId": "62c8c26ca79a8b00195b2654",
+            "__v": 0,
+            "id": "62c96322a9f53600191a15ef"
+        },
+        {
+            "content": [
+                {
+                    "name": "Header",
+                    "selector": ".header"
+                },
+                {
+                    "name": "Subheader",
+                    "selector": ".byline"
+                }
+            ],
+            "title": "IMDB test2",
+            "url": "https://www.imdb.com/chart/top/?ref_=nv_mv_250",
+            "userId": "62c8c26ca79a8b00195b2654",
+            "__v": 0,
+            "id": "62caadafc059170019968d6c"
+        }
+    }
+```
 - GET /api/scrapers/:scraper_id
+```js
+    const response = {
+        "content": [
+                {
+                    "name": "Header",
+                    "selector": ".header"
+                },
+                {
+                    "name": "Subheader",
+                    "selector": ".byline"
+                }
+            ],
+        "title": "IMDB test",
+        "url": "https://www.imdb.com/chart/top/?ref_=nv_mv_250",
+        "userId": "62c8c26ca79a8b00195b2654",
+        "__v": 0,
+        "id": "62c96322a9f53600191a15ef"
+    }
+```
 - POST /api/scrapers/
 ```js
     const body = {
@@ -76,6 +142,32 @@ Currently usage of Scraper Cloud 🚀 is only available through our API (you can
 #### scraping
 - POST /api/scraping/start/:scraper_id
 - GET /api/scraping/:scraper_id
+```js
+    const response = {
+        "data": [
+            {
+                "status": "success",
+                "content": [
+                    {
+                        "name": "Header",
+                        "selector": ".header",
+                        "value": "IMDb Top 250 Movies\n"
+                        "status": "success"
+                    },
+                    {
+                        "name": "Subheader",
+                        "selector": ".byline",
+                        "value": "IMDb Top 250 as rated by regular IMDb voters.",
+                        "status": "success"
+                    }
+                ],
+                "scraper": "62caadafc059170019968d6c",
+                "__v": 1,
+                "id": "62caadbfad3f89001946e321"
+            }
+        ]
+    }
+```
 - POST /api/scraping/schedule/every/:scraper_id
 ```js
     const body = {
