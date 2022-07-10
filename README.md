@@ -69,6 +69,24 @@ public url for demo - https://www.scrapercloud.com/api/
     }
 ```
 
+#### scraping
+- POST /api/scraping/start/:scraper_id
+- GET /api/scraping/:scraper_id
+- POST /api/scraping/schedule/every/:scraper_id
+```js
+    const body = {
+        // Fire every 3 minutes
+        "schedule_for": 3,
+    }
+```
+- POST /api/scraping/schedule/cron/:scraper_id
+```js
+    const body = {
+        // Fire at 12:00 PM (noon) every day
+        "schedule_for": "0 0 12 * * ?",
+    }
+```
+
 ## Lending Page (WIP)
 ![image](https://user-images.githubusercontent.com/36955966/178142477-706f41ef-21c6-4a75-ab19-fd11cd3ee672.png)
 
